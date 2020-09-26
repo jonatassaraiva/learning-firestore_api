@@ -9,9 +9,7 @@ const firebaseAdmin = require('firebase-admin');
 firebaseAdmin.initializeApp({
   databaseURL: process.env.FIREBASE_DATABASE_URL
 });
-
 const _db = firebaseAdmin.firestore();
-
 
 /**
  * Read individual documents

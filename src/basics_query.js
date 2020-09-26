@@ -14,28 +14,37 @@ const basic = async () => {
 
   startTime = Date.now();
   console.log('>> Init basic where');
-  const basicQuery = serviceFirestore.db.collection('posts')
+  let query = serviceFirestore.db.collection('posts')
     .where('title', '==', 'My Post');
-  let result = await serviceFirestore.executeQuery(basicQuery);
-  console.log('Query Post', result);
+  let result = await serviceFirestore.executeQuery(query);
+  console.log(result);
   console.log('<< End basic where', Date.now() - startTime);
 
   startTime = Date.now();
   console.log('>> Init and query');
-  const andQuey = serviceFirestore.db.collection('users')
+  query = serviceFirestore.db.collection('users')
     .where('age', '==', 36)
     .where('sex', '==', 'M');
-  result = await serviceFirestore.executeQuery(andQuey);
+  result = await serviceFirestore.executeQuery(query);
   console.log(result);
   console.log('<< End and query', Date.now() - startTime);
 
   startTime = Date.now();
   console.log('>> Init range');
-  const rangeQuey = serviceFirestore.db.collection('users')
+  query = serviceFirestore.db.collection('users')
     .where('age', '>=', 30)
-  result = await serviceFirestore.executeQuery(rangeQuey);
+  result = await serviceFirestore.executeQuery(query);
   console.log(result);
   console.log('<< End and query', Date.now() - startTime);
+
+  startTime = Date.now();
+  console.log('>> Init query with index');
+  query = serviceFirestore.db.collection('users')
+    .where('sex', '==', 'M')
+    .where('age', '>=', 30)
+  result = await serviceFirestore.executeQuery(query);
+  console.log(result);
+  console.log('<< End query with index', Date.now() - startTime);
 }
 
 basic();
