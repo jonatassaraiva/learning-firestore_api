@@ -1,0 +1,23 @@
+{
+  "name": "clear",
+  "version": "1.0.0",
+  "description": "Firestore-data-modeling/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonatassaraiva/learning-firestore_api.git"
+  },
+  "author": "Jonatas Saraiva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonatassaraiva/learning-firestore_api/issues"
+  },
+  "homepage": "https://github.com/jonatassaraiva/learning-firestore_api#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "firebase-admin": "^9.2.0"
+  }
+}
